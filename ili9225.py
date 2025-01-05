@@ -208,7 +208,7 @@ class ILI9225:
         for y in range(height):
             for x in range(width):
                 buffer_index = 2 * (y * width + x)
-                pixel = (bitmap[bit_offset // 8] >> (7-(bit_offset % 8))) & 1
+                pixel = (bitmap[bit_offset // 8] >> (bit_offset % 8)) & 1
                 if pixel == 0:
                     buffer[buffer_index] = bg_color0
                     buffer[buffer_index + 1] = bg_color1
